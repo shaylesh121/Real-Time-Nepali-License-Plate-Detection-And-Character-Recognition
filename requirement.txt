@@ -1,0 +1,8 @@
+opencv-python
+numpy
+ultralytics
+scikit-learn
+torch
+torchvision
+Pillow
+pygame

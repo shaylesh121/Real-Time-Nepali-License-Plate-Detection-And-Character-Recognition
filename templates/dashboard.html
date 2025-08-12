@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Lot Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        h2 { margin-top: 40px; }
+    </style>
+    <script>
+    setTimeout(function() {
+        window.location.reload();
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+</head>
+<body>
+    <h1>🚗 Parking Lot Dashboard</h1>
+    <h2>Currently Parked Vehicles</h2>
+    <table>
+        <tr><th>Plate Number</th><th>Entry Time</th></tr>
+        {% for v in parked %}
+        <tr>
+            <td>{{ v.plate_number }}</td>
+            <td>{{ v.entry_time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>All Entry Logs</h2>
+    <table>
+        <tr><th>Plate Number</th><th>Entry Time</th><th>Exit Time</th><th>Fare (Rs.)</th></tr>
+        {% for e in all_entries %}
+        <tr>
+            <td>{{ e.plate_number }}</td>
+            <td>{{ e.entry_time }}</td>
+            <td>{{ e.exit_time or '-' }}</td>
+            <td>{{ e.fare or '-' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

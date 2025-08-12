@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+
+# Database files
+*.db
+
+# Audio files
+*.wav
+
+# Model weights
+*.pth
+*.pt
+
+# Model folders
+model1/
+model2(back)/
+
+# OS/Editor files
+__pycache__/
+*.pyc
+*.log
+.DS_Store
