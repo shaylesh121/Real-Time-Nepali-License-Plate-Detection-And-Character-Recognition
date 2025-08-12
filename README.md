@@ -19,8 +19,7 @@ This project uses computer vision and deep learning to detect vehicle entries an
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/shaylesh121/Real-Time-Nepali-License-Plate-Detection-And-Character-Recognition.git)
     ```
 
 2. **Install dependencies**
