@@ -6,14 +6,14 @@ import sqlite3
 app = Flask(__name__)
 
 def fetch_all_entries():
-    with sqlite3.connect('parking_lott.db') as conn:
+    with sqlite3.connect('parking_lot.db') as conn:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM entries ORDER BY entry_time DESC")
         return [dict(row) for row in cursor.fetchall()]
 
 def fetch_currently_parked():
-    with sqlite3.connect('parking_lott.db') as conn:
+    with sqlite3.connect('parking_lot.db') as conn:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute("SELECT plate_number, entry_time FROM entries WHERE exit_time IS NULL ORDER BY entry_time DESC")
