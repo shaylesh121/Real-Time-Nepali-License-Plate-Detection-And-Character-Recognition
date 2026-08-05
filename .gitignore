@@ -1,5 +1,11 @@
-# Virtual environment
+# Virtual environments
 .venv/
+env/
+venv/
+
+# Environment variables / secrets
+.env
+*.env
 
 # Database files
 *.db
@@ -11,12 +17,17 @@
 *.pth
 *.pt
 
-# Model folders
-model1/
-model2(back)/
+# IDE
+.vscode/
+.idea/
 
-# OS/Editor files
+# Python
 __pycache__/
 *.pyc
 *.log
 .DS_Store
+*.egg-info/
+build/
+dist/
+
+output/

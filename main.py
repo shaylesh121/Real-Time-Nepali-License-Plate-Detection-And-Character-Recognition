@@ -14,9 +14,9 @@ import pygame
 pygame.mixer.init()
 
 # === Paths ===
-plate_model_path = r'C:\Users\saile\OneDrive\Desktop\project\project\model1\best.pt'
-char_model_path = r'C:\Users\saile\OneDrive\Desktop\project\project\model2(back)\best.pt'
-classifier_model_path = r'C:\Users\saile\OneDrive\Desktop\project\project\character_classifier.pth'
+plate_model_path = r'C:\Users\saile\OneDrive\Desktop\project\model1\best.pt'
+char_model_path = r'C:\Users\saile\OneDrive\Desktop\project\model2(back)\best.pt'
+classifier_model_path = r'C:\Users\saile\OneDrive\Desktop\project\character_classifier.pth'
 
 top_output_dir = os.path.join('output', 'characters', 'top_row')
 bottom_output_dir = os.path.join('output', 'characters', 'bottom_row')
@@ -89,7 +89,7 @@ def parse_entry_time(entry_time):
     raise ValueError(f"Invalid time: {entry_time}")
 
 def log_to_database(plate_number, is_exit=False, entry_time=None):
-    with sqlite3.connect('parking_lott.db', timeout=10) as conn:
+    with sqlite3.connect('parking_lot.db', timeout=10) as conn:
         cursor = conn.cursor()
         now = datetime.now()
         if not is_exit:
@@ -151,7 +151,7 @@ def run_camera_inference():
                     previous_text = full_text
 
                 if same_count >= MIN_STABLE_FRAMES:
-                    with sqlite3.connect('parking_lott.db') as conn:
+                    with sqlite3.connect('parking_lot.db') as conn:
                         cursor = conn.cursor()
                         cursor.execute("SELECT entry_time FROM entries WHERE plate_number = ? AND exit_time IS NULL", (full_text,))
                         row = cursor.fetchone()
